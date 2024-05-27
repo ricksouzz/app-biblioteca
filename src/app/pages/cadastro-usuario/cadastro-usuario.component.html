@@ -1,0 +1,31 @@
+<div class="register-container">
+  <p-card styleClass="ui-card-shadow">
+    <div class="p-card-header">
+      <h2 class="p-card-title">Cadastro</h2>
+    </div>
+    <div class="p-fluid">
+      <div class="p-field">
+        <div class="input-wrapper">
+          <label for="name" class="p-d-block">Nome</label>
+          <input id="name" type="text" pInputText [(ngModel)]="usuario.nome" class="p-inputtext p-component">
+        </div>
+      </div>
+      <div class="p-field">
+        <div class="input-wrapper">
+          <label for="email" class="p-d-block">E-mail</label>
+          <input id="email" type="email" pInputText [(ngModel)]="usuario.login" class="p-inputtext p-component">
+        </div>
+      </div>
+      <div class="p-field">
+        <div class="input-wrapper">
+          <label for="password" class="p-d-block">Senha</label>
+          <input id="password" type="password" pInputText [(ngModel)]="usuario.password" class="p-inputtext p-component">
+        </div>
+      </div>
+      <div class="p-field">
+        <button pButton type="button" label="Confirmar" (click)="register()"></button>
+        <button pButton type="button" label="Voltar"  (click)="back()"></button>
+      </div>
+    </div>
+  </p-card>
+</div>

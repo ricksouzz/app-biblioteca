@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/cadastro-livro",
+    "/cadastro-usuario",
+    "/home",
+    "/login",
+    "/recupera-senha"
+  ]
+}

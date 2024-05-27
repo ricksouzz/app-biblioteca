@@ -1,0 +1,24 @@
+<div class="login-container">
+  <p-card styleClass="ui-card-shadow">
+    <div class="p-card-header">
+      <h2 class="p-card-title">Login</h2>
+    </div>
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="username">Email/Login</label>
+        <input id="email" type="email" pInputText [(ngModel)]="usuario.login" class="p-inputtext p-component">
+      </div>
+      <div class="p-field">
+        <label for="password">Senha</label>
+        <input id="password" type="password" pInputText [(ngModel)]="usuario.password" class="p-inputtext p-component">
+      </div>
+      <div class="p-field">
+        <button pButton type="button" label="Login" class="p-button-primary" (click)="login()"></button>
+      </div>
+      <div class="p-field">
+        <button pButton type="button" label="Cadastre-se" class="p-button-secondary" (click)="register()"></button>
+        <button pButton type="button" label="Esqueci minha senha" class="p-button-link" (click)="forgotPassword()"></button>
+      </div>
+    </div>
+  </p-card>
+</div>

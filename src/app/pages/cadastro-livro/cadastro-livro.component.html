@@ -1,0 +1,91 @@
+<p-confirmDialog></p-confirmDialog>
+<div class="container">
+  <div *ngIf="telaListagem">
+    <div>
+      <button pButton type="button" icon="pi pi-sign-out" label="Logout" class="p-button-danger" (click)="logout()"
+        style="float: right;"></button>
+      <h1>Livros cadastrados</h1>
+    </div>
+
+    <p *ngIf="livros.length <= 0" class="alert alert-warning">Não há nenhum livro cadastrado.</p>
+
+    <div *ngIf="livros.length > 0" class="table-responsive mb-4">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Data de registro</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let livro of livros; let i = index">
+            <td>{{ livro.descricao }}</td>
+            <td>{{ livro.autor }}</td>
+            <td>{{ livro.atributoPadrao.dataRegistro | date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <button pButton type="button" style="margin-right: 2px;" icon="pi pi-pencil" class="p-button p-button-primary mr-2"
+              (click)="editarLivro(i)"></button>
+            <button  pButton type="button" icon="pi pi-trash" class="p-button p-button-secondary"
+              (click)="confirmarDelecao(livro)"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button pButton type="button" label="Adicionar Livro" class="p-button p-button-success add-button"
+      (click)="cadastrarLivro()"></button>
+  </div>
+
+
+  <div *ngIf="telaNovo">
+    <div>
+      <h2>Adicionar Novo Livro</h2>
+      <div class="form-container">
+        <div>
+          <input id="titulo" type="text" pInputText placeholder="Título" [(ngModel)]="livroSelecionado.descricao"
+            class="p-inputtext p-component">
+        </div>
+        <div class="col-md-8">
+          <input id="autor" type="text" pInputText placeholder="Autor" [(ngModel)]="livroSelecionado.autor"
+            class="p-inputtext p-component">
+        </div>
+        <div>
+          <button pButton type="button" label="Adicionar Livro" class="p-button-primary add-button"
+            (click)="adicionarLivro()"></button>
+        </div>
+        <div>
+          <button pButton type="button" label="Voltar" class="p-button-primary add-button" (click)="voltarParaHome()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="telaEdicao">
+    <div>
+      <h2>Editar Livro</h2>
+      <div class="form-container">
+        <div>
+          <input id="name" type="text" pInputText placeholder="Título" [(ngModel)]="livroSelecionado.descricao"
+            class="p-inputtext p-component">
+        </div>
+        <div>
+          <input id="name" type="text" pInputText placeholder="Autor" [(ngModel)]="livroSelecionado.autor"
+            class="p-inputtext p-component">
+        </div>
+        <div>
+          <button pButton type="button" label="Salvar Edição" class="p-button-primary add-button"
+            (click)="salvarEdicao()"></button>
+        </div>
+        <div>
+          <button pButton type="button" label="Voltar" class="p-button-primary add-button" (click)="voltarParaHome()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

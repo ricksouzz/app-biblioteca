@@ -1,0 +1,23 @@
+<div class="forgot-password-container" style="position: relative;">
+  <div *ngIf="loading" class="spinner-overlay">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+    <p-card styleClass="ui-card-shadow">
+      <div class="p-card-header">
+        <h2 class="p-card-title">Recuperar Senha</h2>
+      </div>
+      <div class="p-fluid">
+        <div class="p-field">
+          <div class="input-wrapper">
+            <label for="email" class="p-d-block">E-mail</label>
+            <input id="email" type="email" pInputText [(ngModel)]="email" class="p-inputtext p-component">
+          </div>
+        </div>
+        <div class="p-field">
+          <button pButton type="button" label="Enviar Link de Recuperação" class="p-button-primary" (click)="recuperaSenha(email)"></button>
+          <button pButton type="button" label="Voltar" class="p-button-primary" (click)="back()"></button>
+        </div>
+      </div>
+    </p-card>
+  </div>
+  

@@ -1,0 +1,34 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.p-fluid {
+  margin: 0;
+}
+
+.p-card {
+  width: 300px;
+}
+
+.p-card-header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+.p-button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}

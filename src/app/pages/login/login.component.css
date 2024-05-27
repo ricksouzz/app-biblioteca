@@ -1,0 +1,35 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ui-card-shadow {
+  width: 400px;
+}
+
+.p-fluid {
+  margin: 0;
+}
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+.p-inputtext {
+  width: 100%;
+}
+
+.p-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.p-card-header {
+  text-align: center;
+}
+
+.p-card-title {
+  margin: 0;
+}
