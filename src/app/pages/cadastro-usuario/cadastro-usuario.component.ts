@@ -10,6 +10,7 @@ import { Usuario } from '../interface/usuario';
 import { UsuarioService } from '../../services/usuario.service';
 import { ToastrService } from 'ngx-toastr';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CarouselModule } from 'primeng/carousel';
 
 
 @Component({
