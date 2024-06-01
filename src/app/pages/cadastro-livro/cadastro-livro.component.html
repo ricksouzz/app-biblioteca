@@ -18,10 +18,10 @@
           <div class="livro-item">
             <div class="livro-item-content">
               <div class="mb-3 text-center">
-                <img *ngIf="livro.imagemLivro else semCapa" [src]="livro.imagemLivro" [alt]="livro.descricao" class="livro-image" />
+                <img *ngIf="livro.imagemLivro else semCapa" [src]="livro.imagemLivro" [alt]="livro.descricao" class="livro-image" />              
               </div>
               <ng-template #semCapa>
-                <img src="../../../assets/semCapa.png" alt="Sem capa" class="livro-image" />
+                <h5>Sem Capa</h5>
               </ng-template>
               <div class="text-center">
                 <h4 class="mb-1">{{livro.descricao}}</h4>

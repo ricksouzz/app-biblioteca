@@ -34,7 +34,7 @@ export class CadastroLivroComponent implements OnInit {
   @ViewChild('fubauto') fileUpload: FileUpload | undefined;
   await: any;
   responsiveOptions: any
-
+  
   constructor(private livroService: LivroService,
     private router: Router,
     private localStorageService: LocalStorageService,
