@@ -5,26 +5,29 @@
     </div>
     <div class="p-fluid">
       <div class="p-field">
-        <div class="input-wrapper">
-          <label for="name" class="p-d-block">Nome</label>
-          <input id="name" type="text" pInputText [(ngModel)]="usuario.nome" class="p-inputtext p-component">
-        </div>
+        <label for="name" class="p-d-block">Nome</label>
+        <input id="name" type="text" pInputText [(ngModel)]="usuario.nome" class="p-inputtext p-component">
       </div>
+
       <div class="p-field">
-        <div class="input-wrapper">
-          <label for="email" class="p-d-block">E-mail</label>
-          <input id="email" type="email" pInputText [(ngModel)]="usuario.login" class="p-inputtext p-component">
-        </div>
+        <label for="email" class="p-d-block">E-mail</label>
+        <input id="email" type="email" pInputText [(ngModel)]="usuario.login" class="p-inputtext p-component">
       </div>
+
       <div class="p-field">
-        <div class="input-wrapper">
-          <label for="password" class="p-d-block">Senha</label>
-          <input id="password" type="password" pInputText [(ngModel)]="usuario.password" class="p-inputtext p-component">
-        </div>
+        <label for="password" class="p-d-block">Senha</label>
+        <input id="password" type="password" pInputText [(ngModel)]="usuario.password" class="p-inputtext p-component">
       </div>
+
+      <div class="p-field">
+        <label for="confirmPassword" class="p-d-block">Confirme a senha</label>
+        <input id="confirmPassword" type="password" pInputText [(ngModel)]="confirmPassword" (ngModelChange)="clearPasswordLabel()" class="p-inputtext p-component">
+        <label *ngIf="passwordsDoNotMatch" style="color: red;">As senhas não coincidem.</label>
+      </div>
+
       <div class="p-field">
         <button pButton type="button" label="Confirmar" (click)="register()"></button>
-        <button pButton type="button" label="Voltar"  (click)="back()"></button>
+        <button pButton type="button" label="Voltar" (click)="back()"></button>
       </div>
     </div>
   </p-card>
