@@ -9,6 +9,7 @@ import { PasswordModule } from 'primeng/password';
 import { Usuario } from '../interface/usuario';
 import { UsuarioService } from '../../services/usuario.service';
 import { ToastrService } from 'ngx-toastr';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 @Component({
@@ -19,7 +20,8 @@ import { ToastrService } from 'ngx-toastr';
     ButtonModule,
     InputTextModule,
     PasswordModule,
-    CardModule
+    CardModule,
+    ProgressSpinnerModule
   ],
   providers: [
   ],
@@ -31,6 +33,7 @@ export class CadastroUsuarioComponent implements OnInit {
   msgs: any;
   confirmPassword: string = '';
   passwordsDoNotMatch: boolean = false;
+  loading: boolean = false;
 
   usuario: Usuario = {
     login: '',
@@ -61,13 +64,16 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   async register() {
+    this.loading = true;
     if (await this.validar()) {
       this.usuarioService.create(this.usuario).subscribe({
         next: res => {
           this.toastr.success('', 'Usuário cadastrado com sucesso!')
+          this.loading = false;
           return this.router.navigate(['/login'])
         },
         error: (err) => {
+          this.loading = false
           this.toastr.info("Usuário já encontra-se cadastrado na nossa base de dados.");
         }
       })

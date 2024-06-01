@@ -1,4 +1,7 @@
 <div class="register-container">
+  <div *ngIf="loading" class="spinner-overlay">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
   <p-card styleClass="ui-card-shadow">
     <div class="p-card-header">
       <h2 class="p-card-title">Cadastro</h2>
